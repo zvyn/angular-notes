@@ -1,0 +1,14 @@
+<div ng-repeat="note in notesCtrl.notes" id="n{{note.id}}" class="panel
+                                                             panel-default">
+    <div class="panel-heading">
+        <button ng-click="notesCtrl.deleteNote(note);"
+            class="pull-top-right btn btn-xs btn-danger">
+            <span class="glyphicon glyphicon-remove"> </span> remove note
+        </button>
+        <input class="panel-title" type=text placeholder="Title" ng-model="note.title" ng-change="notesCtrl.submit(note)" />
+    </div>
+    <textarea class=panel-body placeholder="Text" ng-model="note.body" ng-change="notesCtrl.submit(note)"></textarea>
+</div>
+<button ng-click="notesCtrl.addNote();" class="btn btn-success">
+    <span class="glyphicon glyphicon-plus"> </span> add new note
+</button>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="note">
+    <head>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/min.css" />
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/flat.css" />
+    </head>
+    <body ng-controller="NotesController as notesCtrl">
+        <div class="container-fluid">
+            <div class="row head">
+                <h1 class=col-sm-3>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <input type=text value=Notes /></h1>
+                <h1 class="col-sm-9 pull-right"><small><input type=text
+                 value="anything can change"
+                 /></small></h1>
+            </div>
+            <overview class="col-sm-3"></overview>
+            <notes class="col-sm-9 pull-right"></notes>
+        </div>
+        <script src="angular/angular.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

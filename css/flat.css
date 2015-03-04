@@ -1,0 +1,42 @@
+input[type=text] {
+    width: 100%;
+    display: inline-block;
+}
+
+h1 > small > input[type=text] {
+    line-height: 2;
+}
+textarea, input {
+    background: transparent;
+    border: none;
+}
+textarea {
+    width: 100%;
+    min-height: 10em;
+}
+overview {
+    overflow-y: auto;
+    max-height: 70%;
+    position: fixed !important;
+}
+
+button.pull-top-right {
+    position: relative;
+    float: right;
+    top: -11px;
+    right: -16px;
+    margin-bottom: -19px;
+}
+
+.head {
+    background-color: rgba(255,255,255,0.9);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.head > h1.col-sm-3 {
+    position: fixed;
+}
+.head > h1.col-sm-3 >input[type=text] {
+    width: 200px;
+}
