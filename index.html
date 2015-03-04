@@ -10,10 +10,20 @@
             <div class="row head">
                 <h1 class=col-sm-3>
                     <span class="glyphicon glyphicon-pencil"></span>
-                    <input type=text value=Notes /></h1>
-                <h1 class="col-sm-9 pull-right"><small><input type=text
-                 value="anything can change"
-                 /></small></h1>
+                    <input
+                          type=text
+                          ng-model="notesCtrl.title"
+                          ng-change="notesCtrl.save('title')"
+                    />
+                </h1>
+                <h1 class="col-sm-9 pull-right">
+                    <small>
+                        <input
+                            type=text
+                            ng-model="notesCtrl.slogan"
+                            ng-change="notesCtrl.save('slogan')"
+                        />
+                    </small></h1>
             </div>
             <overview class="col-sm-3"></overview>
             <notes class="col-sm-9 pull-right"></notes>
