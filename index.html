@@ -4,8 +4,14 @@
         <link rel="stylesheet" type="text/css" href="bootstrap/css/min.css" />
         <link rel="stylesheet" type="text/css" href="bootstrap/css/theme.min.css" />
         <link rel="stylesheet" type="text/css" href="css/flat.css" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
     </head>
     <body ng-controller="NotesController as notesCtrl">
+        <div class="github-fork-ribbon-wrapper right">
+            <div class="github-fork-ribbon">
+                <a href="https://github.com/zvyn/angular-notes/">Fork me on GitHub</a>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="row head">
                 <h1 class=col-xs-1>
@@ -13,9 +19,9 @@
                 </h1>
                 <h1 class=col-xs-11>
                     <input
-                          type=text
-                          ng-model="notesCtrl.title"
-                          ng-change="notesCtrl.save('title')"
+                    type=text
+                    ng-model="notesCtrl.title"
+                    ng-change="notesCtrl.save('title')"
                     />
                 </h1>
             </div>
