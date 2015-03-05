@@ -3,8 +3,8 @@ input[type=text] {
     display: inline-block;
 }
 
-h1 > small > input[type=text] {
-    line-height: 2;
+h1 > input[type=text] {
+    line-height: initial;
 }
 textarea, input {
     background: transparent;
@@ -14,10 +14,28 @@ textarea {
     width: 100%;
     min-height: 10em;
 }
-overview {
-    overflow-y: auto;
-    max-height: 70%;
-    position: fixed !important;
+
+@media (min-width: 768px) {
+    overview {
+        position: fixed !important;
+        overflow-y: auto;
+        top: 85px;
+        bottom: 15px;
+    }
+    notes {
+        overflow-y: auto;
+        position: fixed !important;
+        top: 85px;
+        bottom: 15px;
+        left: 25%;
+    }
+    .head {
+        position: fixed;
+        background-color: rgba(255,255,255,0.9);
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
 }
 
 button.pull-top-right {
@@ -28,15 +46,3 @@ button.pull-top-right {
     margin-bottom: -19px;
 }
 
-.head {
-    background-color: rgba(255,255,255,0.9);
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-.head > h1.col-sm-3 {
-    position: fixed;
-}
-.head > h1.col-sm-3 >input[type=text] {
-    width: 200px;
-}
