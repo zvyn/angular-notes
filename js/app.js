@@ -9,7 +9,7 @@
             }
             else {
                 this[attr] = default_value;
-            }
+            };
         };
 
         this.save = function(attr) {
@@ -22,11 +22,11 @@
         };
 
         this.deleteNote = function(note){
-            var index = this.notes.findIndex(function(candidate){
-                return candidate["title"] == note["title"];
-            });
-            this.notes.splice(index, 1);
-            this.save("notes");
+            var index = this.notes.indexOf(note);
+            if (index != -1) {
+                this.notes.splice(index, 1);
+                this.save("notes");
+            };
         };
 
         this.addNote = function(){
