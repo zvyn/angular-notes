@@ -7,7 +7,7 @@
         </button>
         <input class="panel-title" type=text placeholder="Title" ng-model="note.title" ng-change="notesCtrl.save()" />
     </div>
-    <textarea class=panel-body placeholder="Text" ng-model="note.body" ng-change="notesCtrl.submit(note)"></textarea>
+    <textarea class=panel-body placeholder="Text" ng-model="note.body" ng-change="notesCtrl.save()"></textarea>
 </div>
 <button ng-click="notesCtrl.addNote();" class="btn btn-success">
     <span class="glyphicon glyphicon-plus"> </span> add new note
