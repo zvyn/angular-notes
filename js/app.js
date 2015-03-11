@@ -25,7 +25,7 @@ THE SOFTWARE.
 (function(){
     var app = angular.module('note', []);
 
-    app.version = 0.01;
+    app.version = 0.001;
     if (localStorage["version"] != app.version) {
         localStorage.clear()
         localStorage["version"] = app.version;
@@ -33,7 +33,9 @@ THE SOFTWARE.
 
     app.controller('NotesController', function(){
         this.parse = function () {
-            data = localStorage["NotesController"] || "{\"maxID\": {\"value\": 0, \"writable\": true}, \"title\": {\"value\": \"Untiteld Page\", \"writable\": true}, \"notes\": {\"value\": [], \"writable\": true}}"
+            data = localStorage["NotesController"] || (
+                "{\"meta\": {\"value\":" + JSON.stringify({"maxID": 0, "title": "Untitled"}) + ", \"writable\": true}," +
+                "\"notes\": {\"value\":" + JSON.stringify([]) + ", \"writable\": true}}");
             this.data_properties = JSON.parse(data);
             Object.defineProperties(this, this.data_properties);
         };
@@ -51,13 +53,11 @@ THE SOFTWARE.
         };
 
         this.addNote = function(){
-            this.notes.push({'id': this.maxID + 1, 'title': '', 'body': ''});
-            this.maxID += 1;
+            this.notes.push({'id': this.meta["maxID"] + 1, 'title': '', 'body': ''});
+            this.meta["maxID"] += 1;
         };
 
-        this.parse("notes", "[]");
-        this.parse("maxID", "0");
-        this.parse("title", "\"Notes\"");
+        this.parse();
     });
 
     app.directive('overview', function(){
