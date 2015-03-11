@@ -14,7 +14,7 @@ is being used.
 It's really just a minimal proof of concept and my introduction to AngularJs,
 I love it!
 
-![the (in)famous AngularJs learning curve](http://www.bennadel.com/resources/uploads/2013/feelings_about_angularjs_over_time.png)
+![the (in)famous AngularJs learning curve](http://www.bennadel.com/resources/uploads/2013/feelings_about_angularjs_over_time.png "from bennadel.com")
 
 License
 -------
